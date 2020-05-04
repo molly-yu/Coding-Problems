@@ -41,8 +41,8 @@ class Solution(object):
         for c, v in enumerate(nums): # enumerate: counter, value
             cmp = target - v
             if cmp in passed:
-                return [passed[cmp], c]
-            passed[v] = c
+                return [passed[cmp], c] # get value(index) of key(cmp)
+            passed[v] = c # key = numerical values, value = index
         return []
 
     twoSumFinal(1,[2,5,5,11],10)
