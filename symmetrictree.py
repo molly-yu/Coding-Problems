@@ -39,10 +39,26 @@ class Solution(object):
 
 
 
-    
+    # Cleaned up
     def isSymmetric2(self, root):
         """
         :type root: TreeNode
         :rtype: bool
         """
+        return self.compareTree2(root, root)
+
+    def compareTree2(self, leftTree, rightTree):
+        if leftTree is None and rightTree is None:
+            return True
+        elif leftTree is None or rightTree is None:
+            return False
+        if leftTree.val != rightTree.val :
+            return False
+        else:
+            return (self.compareTree2(leftTree.left, rightTree.right) and self.compareTree2(leftTree.right, rightTree.left))
+        # Can be replaced by this:
+        # if leftTree and rightTree:
+            # return leftTree.val == rightTree.val and self.compareTree2(leftTree.left, rightTree.right) and self.compareTree2(leftTree.right, rightTree.left)
+        # return leftTree == rightTree
         
+    #Iterative solution: use queue to create a new tree, removing elements from original tree
