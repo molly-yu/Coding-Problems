@@ -39,7 +39,7 @@ class Solution(object):
 
 
 
-
+    
     def isSymmetric2(self, root):
         """
         :type root: TreeNode
