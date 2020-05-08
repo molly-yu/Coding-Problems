@@ -32,10 +32,6 @@ class Solution(object):
 
     # Cleaned up code (slightly slower run time) but less robust
     def maxDepth2(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
         return self.max_Depth2(root, 0)
 
     def max_Depth2(self, root, depth):
