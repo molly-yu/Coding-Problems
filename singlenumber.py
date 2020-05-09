@@ -25,7 +25,7 @@ class Solution(object):
         return nums[0]
 
 
-    # Solution using List (append if not already in array, remove if already in array)
+    # Solution using List (append if not already in array, remove if already in array), pretty bad time complexity
     def singleNumber3(self, nums):
         newlist = []
         for i in nums:
@@ -34,3 +34,12 @@ class Solution(object):
             else:
                 newlist.remove(i)
         return newlist.pop() # remove the last element and return it (non-duplicate value)
+
+
+    # Mathematical Solution : 2 * (a + b + c) - (a + a + b + b + c) = c
+     def singleNumber4(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return 2 * sum(set(nums)) - sum(nums) # set is all unique elements
