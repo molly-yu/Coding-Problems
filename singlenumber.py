@@ -5,7 +5,7 @@
 # Solution by Molly Yu
 
 class Solution(object):
-    # Solution using hashmap
+    # Solution using hashmap, works even if numbers come up >2 times
     def singleNumber(self, nums):
         """
         :type nums: List[int]
@@ -23,3 +23,14 @@ class Solution(object):
         for i in range(1,len(nums)):
             nums[0] ^= nums[i] # anything XOR itself will be 0, so we end up with the non-duplicate number
         return nums[0]
+
+
+    # Solution using List (append if not already in array, remove if already in array)
+    def singleNumber3(self, nums):
+        newlist = []
+        for i in nums:
+            if i not in newlist:
+                newlist.append(i)
+            else:
+                newlist.remove(i)
+        return newlist.pop() # remove the last element and return it (non-duplicate value)
